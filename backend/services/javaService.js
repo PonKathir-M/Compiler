@@ -407,7 +407,9 @@ export const executeJava = async (code, input) => {
         runResult.stderr,
         runResult.truncated,
       );
-
+      console.log("RUN STDOUT:", runResult.stdout);
+      console.log("RUN STDERR:", runResult.stderr);
+      console.log("RUN CODE:", runResult.code);
       if (runResult.code === 0) {
         return buildResponse({
           ok: true,
