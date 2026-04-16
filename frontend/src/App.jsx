@@ -161,7 +161,7 @@ function App() {
     }, REQUEST_TIMEOUT_MS);
 
     try {
-      const response = await fetch("https://compiler-backend-p5y5.onrender.com/api/run", {
+      const response = await fetch("https://compiler-backend-m9js.onrender.com/api/run", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
