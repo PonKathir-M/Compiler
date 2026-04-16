@@ -260,6 +260,7 @@ const runProcess = ({
 });
 
 export const executeJava = async (code, input) => {
+  console.log("executeJava started");
   const normalizedCode = code.replace(/\r\n/g, "\n");
   const normalizedInput = input.replace(/\r\n/g, "\n");
 

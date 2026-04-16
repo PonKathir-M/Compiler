@@ -10,6 +10,9 @@ router.get("/", (_req, res) => {
   });
 });
 
-router.post("/run", runCode);
+router.post("/run", (req, res) => {
+  console.log("API HIT - RUN CODE"); // ✅ ADD HERE
+  runCode(req, res);
+});
 
 export default router;

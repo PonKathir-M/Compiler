@@ -1,6 +1,7 @@
 import { executeJava } from "../services/javaService.js";
 
 export const runCode = async (req, res) => {
+  console.log("Controller reached");
   if (!req.body || typeof req.body !== "object" || Array.isArray(req.body)) {
     return res.status(400).json({
       ok: false,
