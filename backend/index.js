@@ -35,6 +35,10 @@ app.get("/api/health", (_req, res) => {
 
 app.use("/api", runRoute);
 
+app.get("/", (_req, res) => {
+  res.send("Java Compiler Backend is Running 🚀");
+});
+
 app.use((req, res) => {
   res.status(404).json({
     ok: false,
