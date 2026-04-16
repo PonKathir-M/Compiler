@@ -1,0 +1,13 @@
+Step 1: Add render.yaml (Best way)
+
+Create a file in root folder:
+
+services:
+  - type: web
+    name: compiler-backend
+    env: node
+    buildCommand: |
+      apt-get update
+      apt-get install -y openjdk-17-jdk
+      npm install
+    startCommand: node backend/index.js
