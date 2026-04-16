@@ -1,0 +1,24 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "API for compiling and running Java code snippets",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch index.js",
+    "start": "node index.js",
+    "check": "node --check index.js && node --check routes/run.js && node --check controllers/runController.js && node --check services/javaService.js"
+  },
+  "keywords": [
+    "java",
+    "compiler",
+    "express",
+    "online-compiler"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}

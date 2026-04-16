@@ -1,0 +1,247 @@
+.app-shell {
+  width: min(1250px, 96vw);
+  margin: 2rem auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: end;
+  padding: 1.2rem 1.4rem;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: linear-gradient(130deg, rgba(10, 53, 89, 0.95), rgba(9, 30, 53, 0.9));
+  color: #f8fbff;
+  box-shadow: var(--shadow-lg);
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #9ecae8;
+}
+
+.header h1 {
+  margin: 0.4rem 0 0;
+  font-size: clamp(1.5rem, 2.8vw, 2.4rem);
+  font-family: var(--font-heading);
+  line-height: 1.08;
+}
+
+.run-btn {
+  border: none;
+  border-radius: 12px;
+  padding: 0.8rem 1.1rem;
+  background: linear-gradient(130deg, #f5b041, #ef8842);
+  color: #111;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.18s ease, filter 0.18s ease;
+}
+
+.run-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+}
+
+.run-btn:disabled {
+  cursor: wait;
+  opacity: 0.78;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1rem;
+}
+
+.panel {
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--panel);
+  box-shadow: var(--shadow-sm);
+  padding: 1rem;
+}
+
+.panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.panel-head h2 {
+  margin: 0;
+  font-size: 1.08rem;
+  font-family: var(--font-heading);
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+select,
+.ghost-btn {
+  border-radius: 9px;
+  border: 1px solid var(--border-soft);
+  background: #fff;
+  padding: 0.52rem 0.75rem;
+  font-size: 0.88rem;
+}
+
+.ghost-btn {
+  cursor: pointer;
+}
+
+.editor,
+.input-box {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--border-soft);
+  background: #08111d;
+  color: #d8e9ff;
+  font-family: var(--font-mono);
+  font-size: 0.93rem;
+  line-height: 1.45;
+  padding: 0.8rem;
+  box-sizing: border-box;
+}
+
+.editor {
+  min-height: 430px;
+  resize: vertical;
+}
+
+.input-label {
+  display: block;
+  margin: 0.8rem 0 0.5rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.input-box {
+  min-height: 95px;
+  resize: vertical;
+}
+
+.status-pill {
+  border-radius: 999px;
+  padding: 0.3rem 0.65rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.status-pill.idle {
+  color: #4f4f4f;
+  background: #ececec;
+}
+
+.status-pill.running {
+  color: #664100;
+  background: #ffe7a5;
+}
+
+.status-pill.success {
+  color: #0e5b37;
+  background: #b8eecf;
+}
+
+.status-pill.error {
+  color: #7e1e1e;
+  background: #ffd5d5;
+}
+
+.result-message {
+  margin: 0 0 0.9rem;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.console {
+  margin: 0;
+  min-height: 340px;
+  border-radius: 12px;
+  background: #101820;
+  color: #f7fbff;
+  border: 1px solid #273444;
+  padding: 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  line-height: 1.42;
+  white-space: pre-wrap;
+  overflow: auto;
+}
+
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-top: 0.9rem;
+}
+
+.meta-grid article {
+  border: 1px solid var(--border-soft);
+  border-radius: 11px;
+  background: #fcfdff;
+  padding: 0.58rem 0.65rem;
+}
+
+.meta-grid h3 {
+  margin: 0 0 0.2rem;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #567;
+}
+
+.meta-grid p {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: #1f2a37;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1000px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .editor {
+    min-height: 300px;
+  }
+
+  .console {
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 700px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .run-btn {
+    width: 100%;
+  }
+
+  .panel-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .meta-grid {
+    grid-template-columns: 1fr;
+  }
+}
